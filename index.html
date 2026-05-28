@@ -226,7 +226,7 @@
                             </div>
                         </div>
 
-                        <!-- Right: Live Hourly Indicators (Filters out noise) -->
+                        <!-- Right: Live Hourly Indicators (Calculated dynamically) -->
                         <div class="bg-[#0b0f19] border border-slate-800/80 rounded-xl p-4 space-y-3">
                             <span class="text-xs font-semibold text-slate-400 block border-b border-slate-800 pb-1.5">⏰ Live Technicals (ไทม์เฟรมรายชั่วโมง 1h)</span>
                             <div class="grid grid-cols-3 gap-2">
@@ -888,7 +888,7 @@
             // 1.2 Plan: Holding (Short-term)
             let plan1_2 = "";
             if (currentSpot > ema50) {
-                plan1_2 = `⛵ <strong>ถือข้ามแนวต้าน (Let Profit Run):</strong> ตราบใดที่ราคยังรักษาระดับเหนือแนวรับเส้น EMA 50 วัน ($${ema50.toFixed(1)}) แนะนำถือครองสัญญารันเทรนด์เพื่อไปรอทำกำไรเป้าบนที่ <strong>${targetSpot965Short.toLocaleString()} ฿</strong>`;
+                plan1_2 = `⛵ <strong>ถือข้ามแนวต้าน (Let Profit Run):</strong> ตราบใดที่ราคายังรักษาระดับเหนือแนวรับเส้น EMA 50 วัน ($${ema50.toFixed(1)}) แนะนำถือครองสัญญารันเทรนด์เพื่อไปรอทำกำไรเป้าบนที่ <strong>${targetSpot965Short.toLocaleString()} ฿</strong>`;
             } else {
                 plan1_2 = `🛑 <strong>สัญญานเตือน (Cautious Hold):</strong> ราคาเริ่มทรุดต่ำกว่าแนวรับระยะสั้น-กลาง ควรวางจุดป้องกันขาดทุน (Trailing Stop) หากหลุดแนวรับที่ $${(currentSpot * 0.985).toFixed(1)} เพื่อรักษากำไรส่วนใหญ่`;
             }
@@ -1015,7 +1015,7 @@
                             <div>
                                 <h3 class="text-orange-500 font-bold mb-1">### 3. แนวต้านเป้าหมายคลื่น 5 (Fibonacci Projections)</h3>
                                 <ul class="space-y-1 list-none pl-0 text-slate-300">
-                                    <li>* <strong>แนวต้านที่ 1 (เป้าดักสวิงสั้น):</strong> $${fib38_2.toFixed(2)} USD <span class="text-slate-500">(ทองไทยประมาณ ${gold965_fib38_2.toLocaleString()} ฿)</span></li>
+                                    <li>* <strong>แนวต้านที่ 1 (เป้าหมายเร่งด่วน):</strong> $${fib38_2.toFixed(2)} USD <span class="text-slate-500">(ทองไทยประมาณ ${gold965_fib38_2.toLocaleString()} ฿)</span></li>
                                     <li>* <strong>แนวต้านที่ 2 (ด่านชะลอกำไรคลื่น 5 เบื้องต้น):</strong> $${fib61_8.toFixed(2)} USD <span class="text-slate-500">(ทองไทยประมาณ ${gold965_fib61_8.toLocaleString()} ฿)</span></li>
                                     <li>* <strong>แนวต้านที่ 3 (ยอดคู่ประวัติศาสตร์เดิม):</strong> $${fib100.toFixed(2)} USD <span class="text-slate-500">(ทองไทยประมาณ ${gold965_fib100.toLocaleString()} ฿)</span></li>
                                 </ul>
